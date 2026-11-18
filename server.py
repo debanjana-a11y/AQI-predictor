@@ -10,7 +10,7 @@ from retry_requests import retry
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.metrics import mean_absolute_error
 
-# 1. Load your 400 days of REAL Rabindra Sarobar sensor data
+# 1. Load 400 days of REAL Rabindra Sarobar sensor data
 CACHE_CSV = "station_10904_400d.csv"
 LAT, LON = 22.5111, 88.3514  # Rabindra Sarobar, Kolkata
 
@@ -50,7 +50,7 @@ test_valid = test_df.dropna(subset=features + ["target_1h"]).copy()
 test_valid["my_pred"] = (test_valid["real_clean"] + model.predict(test_valid[features])).clip(lower=0)
 test_valid["target_date"] = test_valid["date"] + pd.Timedelta(hours=1)
 
-# 4. Fetch Last 30 Days from Open-Meteo Using Your Exact Jupyter Client
+# 4. Fetch Last 30 Days from Open-Meteo
 cache_session = requests_cache.CachedSession(".om_clean_cache", expire_after=3600)
 retry_session = retry(cache_session, retries=5, backoff_factor=0.2)
 openmeteo = openmeteo_requests.Client(session=retry_session)
