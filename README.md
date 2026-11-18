@@ -5,6 +5,9 @@ A machine learning air-quality forecasting and hyper-local calibration pipeline 
 
 Trained on 400 days of real physical sensor logs from the West Bengal Pollution Control Board (WBPCB) station at Rabindra Sarobar, Kolkata (ID: 10904), this model predicts short-term PM2.5 levels with ±3.61 µg/m³ Mean Absolute Error (MAE). That reduces hyper-local street-level error by 90.1% compared with the raw regional model's 36.51 µg/m³ MAE.
 
+<img width="2100" height="1200" alt="last_30_days_comparison" src="https://github.com/user-attachments/assets/b2618187-9aae-4320-baf1-3e631f185528" />
+
+
 ## Why This Project Exists
 
 Global air-quality APIs such as Open-Meteo and CAMS rely on coarse 15–40 km atmospheric grid models. Although they perform well for regional weather systems such as Bay of Bengal cyclones, coarse grids miss neighborhood traffic corridors, construction dust, and local winter inversions.
