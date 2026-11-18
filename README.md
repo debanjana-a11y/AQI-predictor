@@ -18,6 +18,9 @@ This project addresses that gap by:
 2. Engineering time-series momentum and cyclical features, including `lag_1`, `lag_24`, `roll_6`, `momentum`, and local IST hour, to capture daily urban emission rhythms.
 3. Predicting hourly deltas (`target - current`) rather than raw concentrations, reducing tree-model ceiling effects during severe winter pollution spikes.
 
+## Limitation
+That revealed that while my local Random Forest excels at 1–6 hour hyper-local nowcasting, global atmospheric models (Open Meteo) remain stronger for multi-day weather fronts like Bay of Bengal cyclones.
+
 ## Benchmark Results
 
 The model was evaluated chronologically across 720 held-out test hours against physical WBPCB sensor readings. A total of 8,828 hourly records were ingested.
